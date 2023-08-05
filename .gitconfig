@@ -1,0 +1,8 @@
+[http]
+	sslVerify = false
+	postBuffer = 1048576000
+[user]
+	email = 904016301@qq.com
+	name = AtaraxiaZ
+[core]
+	editor = vim
