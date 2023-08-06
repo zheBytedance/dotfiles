@@ -113,6 +113,7 @@ if ! shopt -oq posix; then
     . /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
+  fi
 fi
 
 # 下面这2条会将所有xilinx的那一套编译链加入$PATH中，导致Verilator无法编译
@@ -154,4 +155,3 @@ alias dve="dve -full64 &"
 alias vcs64="vcs -full64"
 alias verdi="verdi -full64 &"
 export PATH=$HOME/bin/:$PATH
-fi
