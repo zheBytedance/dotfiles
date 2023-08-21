@@ -1,8 +1,13 @@
 #! /bin/bash
 # This scipts is to setup the symbolic link
 
-files="bashrc bash_aliases vimrc vim gitconfig gitignore_global tmux.conf"
+dotfiles="bashrc bash_aliases zshrc vimrc vim gitconfig gitignore_global tmux.conf"
+files="development"
+
+for file in $dotfiles; do
+	ln -s ~/dotfiles/$file ~/.$file
+done
 
 for file in $files; do
-	ln -s ~/dotfiles/$file ~/.$file
+	ln -s ~/dotfiles/$file ~/$file
 done
