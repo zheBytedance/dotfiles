@@ -1,7 +1,7 @@
 [http]
 	sslVerify = false
 	postBuffer = 1048576000
-	# proxy = 127.0.0.1:7890
+	proxy = 127.0.0.1:7890
 [user]
 	email = 904016301@qq.com
 	name = AtaraxiaZ

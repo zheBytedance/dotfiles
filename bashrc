@@ -100,8 +100,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+	. ~/.aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -122,8 +122,11 @@ fi
 export PATH=$PATH:/usr/local/MATLAB/R2021a/bin
 export PATH=$PATH:/home/zhe/anaconda3/bin
 export PATH=$PATH:/home/zhe/software/pycharm/bin
-export PLATFORM_REPO_PATHS=/opt/xilinx/platforms
+export PATH=$HOME/bin/:$PATH
+# To add pip install --user package to PATH
+export PATH=$HOME/.local/bin/:$PATH
 
+export PLATFORM_REPO_PATHS=/opt/xilinx/platforms
 #export export SYNOPSYS="/tools/Synopsys"
 export VCS_TARGET_ARCH="amd64"
 # export PATH="/tools/Synopsys/VCS2018/vcs/O-2018.09-SP2/gui/dve/bin:"$PATH
@@ -152,9 +155,6 @@ alias lmli="/tools/Synopsys/SCL2018/scl/2018.06/linux64/bin/lmgrd -c /usr/stone/
 alias dve="dve -full64 &"
 alias vcs64="vcs -full64"
 alias verdi="verdi -full64 &"
-export PATH=$HOME/bin/:$PATH
-# To add pip install --user package to PATH
-export PATH=$HOME/.local/bin/:$PATH
 
 # eval $(ssh-agent)
 # ssh-add ~/.ssh/id_ed25519
@@ -162,4 +162,3 @@ export PATH=$HOME/.local/bin/:$PATH
 # system proxy, use clash
 export http_proxy='127.0.0.1:7890'
 export https_proxy='127.0.0.1:7890'
-
