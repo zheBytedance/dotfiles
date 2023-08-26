@@ -1,0 +1,11 @@
+# bin file
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin/:$PATH
+
+
+# software
+export PATH=$PATH:/usr/local/MATLAB/R2021a/bin
+export PATH=$PATH:$HOME/software/pycharm/bin
+
+# python
+export PATH=$PATH:$HOME/anaconda3/bin

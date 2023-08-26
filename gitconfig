@@ -5,7 +5,7 @@
 	email = 904016301@qq.com
 	name = AtaraxiaZ
 [core]
-	editor = nvim
+	editor = vim
 [alias]
 	graph = log --all --graph --decorate --oneline
 [difftool]

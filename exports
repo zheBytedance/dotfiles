@@ -1,0 +1,38 @@
+# system proxy, use clash
+export http_proxy='127.0.0.1:7890'
+export https_proxy='127.0.0.1:7890'
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Xilinx
+# 下面这2条会将所有xilinx的那一套编译链加入$PATH中，导致Verilator无法编译
+# source /tools/Xilinx/Vivado/2021.2/settings64.sh
+# source /tools/Xilinx/xilinx-versal-common-v2021.2/versal-common/environment-setup-cortexa72-cortexa53-xilinx-linux
+# source /tools/Xilinx/petalinux-221/settings.sh
+export PLATFORM_REPO_PATHS=/opt/xilinx/platforms
+
+# Synopsys
+#export export SYNOPSYS="/tools/Synopsys"
+export VCS_TARGET_ARCH="amd64"
+# export PATH="/tools/Synopsys/VCS2018/vcs/O-2018.09-SP2/gui/dve/bin:"$PATH
+export DVE_HOME="/tools/Synopsys/VCS2018/vcs/O-2018.09-SP2/gui/dve"
+# export PATH="/tools/Synopsys/VCS2018/vcs/O-2018.09-SP2/bin:"$PATH
+export VCS_HOME="/tools/Synopsys/VCS2018/vcs/O-2018.09-SP2"
+# export VCS_ARCH_OVERRIDE="linux"
+# export PATH="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2/bin:"$PATH
+export VERDI_HOME="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2"
+export LD_LIBRARY_PATH="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2/share/PLI/lib/LINUX64":$LD_LIBRARY_PATH
+export VERDI_DIR="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2"
+export NOVAS_INST_DIR="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2"
+export NPI_PLATFORM="LINUX64_GNU_472"
+export LD_LIBRARY_PATH="$NOVAS_INST_DIR/share/NPI/lib/LINUX64_GNU_520":$LD_LIBRARY_PATH
+export NOVAS_HOME="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2"
+# LICENSE
+export SNPSLMD_LICENSE_FILE="/tools/Synopsys/License/Synopsys.dat"
+export SNPSLMD_LICENSE_FILE=27000@zhe-pc
+export LM_LICENSE_FILE="/tools/Synopsys/License/Synopsys.dat"
+
+

@@ -1,16 +1,16 @@
 #! /bin/bash
 # This scipts is to setup the symbolic link
 
-dotfiles="bashrc aliases zshrc vimrc vim gitconfig gitignore_global tmux.conf"
+dotfiles="bashrc aliases path exports func extra zshrc vimrc vim gitconfig gitignore_global tmux.conf"
 files="development"
 
 for file in $dotfiles; do
-	ln -s ~/dotfiles/$file ~/.$file
+	[ ! -f ~/.$file ] && ln -s ~/dotfiles/$file ~/.$file
 done
 
 for file in $files; do
-	ln -s ~/dotfiles/$file ~/$file
+	[ ! -f ~/$file ] && ln -s ~/dotfiles/$file ~/$file
 done
 
 i3config="i3config"
-ln -s ~/dotfiles/$i3config ~/.config/i3/config
+[ ! -f ~/.config/i3/config ] && ln -s ~/dotfiles/$i3config ~/.config/i3/config

@@ -71,25 +71,8 @@ xterm* | rxvt*)
 *) ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	alias ls='ls --color=auto'
-	#alias dir='dir --color=auto'
-	#alias vdir='vdir --color=auto'
-
-	alias grep='grep --color=auto'
-	alias fgrep='fgrep --color=auto'
-	alias egrep='egrep --color=auto'
-fi
-
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -100,9 +83,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.aliases ]; then
-	. ~/.aliases
-fi
+for file in ~/.{path,exports,aliases,func,extra}; do
+	[ -r "$file" ] && source "$file"
+done
+unset file
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -114,55 +98,3 @@ if ! shopt -oq posix; then
 		. /etc/bash_completion
 	fi
 fi
-
-# 下面这2条会将所有xilinx的那一套编译链加入$PATH中，导致Verilator无法编译
-# source /tools/Xilinx/Vivado/2021.2/settings64.sh
-# source /tools/Xilinx/xilinx-versal-common-v2021.2/versal-common/environment-setup-cortexa72-cortexa53-xilinx-linux
-# source /tools/Xilinx/petalinux-221/settings.sh
-export PATH=$PATH:/usr/local/MATLAB/R2021a/bin
-export PATH=$PATH:/home/zhe/anaconda3/bin
-export PATH=$PATH:/home/zhe/software/pycharm/bin
-export PATH=$HOME/bin/:$PATH
-# To add pip install --user package to PATH
-export PATH=$HOME/.local/bin/:$PATH
-
-export PLATFORM_REPO_PATHS=/opt/xilinx/platforms
-#export export SYNOPSYS="/tools/Synopsys"
-export VCS_TARGET_ARCH="amd64"
-# export PATH="/tools/Synopsys/VCS2018/vcs/O-2018.09-SP2/gui/dve/bin:"$PATH
-export DVE_HOME="/tools/Synopsys/VCS2018/vcs/O-2018.09-SP2/gui/dve"
-# export PATH="/tools/Synopsys/VCS2018/vcs/O-2018.09-SP2/bin:"$PATH
-export VCS_HOME="/tools/Synopsys/VCS2018/vcs/O-2018.09-SP2"
-#export VCS_ARCH_OVERRIDE="linux"
-#verdi
-# export PATH="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2/bin:"$PATH
-export VERDI_HOME="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2"
-export LD_LIBRARY_PATH="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2/share/PLI/lib/LINUX64":$LD_LIBRARY_PATH
-export VERDI_DIR="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2"
-export NOVAS_INST_DIR="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2"
-export NPI_PLATFORM="LINUX64_GNU_472"
-export LD_LIBRARY_PATH="$NOVAS_INST_DIR/share/NPI/lib/LINUX64_GNU_520":$LD_LIBRARY_PATH
-export NOVAS_HOME="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2"
-
-#LICENSE
-export SNPSLMD_LICENSE_FILE="/tools/Synopsys/License/Synopsys.dat"
-export SNPSLMD_LICENSE_FILE=27000@zhe-pc
-export LM_LICENSE_FILE="/tools/Synopsys/License/Synopsys.dat"
-
-alias lmli="/tools/Synopsys/SCL2018/scl/2018.06/linux64/bin/lmgrd -c /usr/stone/software/License/Synopsys.dat"
-#SCL
-# export PATH=/tools/Synopsys/SCL2018/scl/2018.06/linux64/bin:$PATH
-alias dve="dve -full64 &"
-alias vcs64="vcs -full64"
-alias verdi="verdi -full64 &"
-
-# eval $(ssh-agent)
-# ssh-add ~/.ssh/id_ed25519
-
-# system proxy, use clash
-export http_proxy='127.0.0.1:7890'
-export https_proxy='127.0.0.1:7890'
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
