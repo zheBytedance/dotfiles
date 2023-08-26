@@ -1,11 +1,18 @@
 [http]
 	sslVerify = false
-	postBuffer = 1048576000
 	proxy = 127.0.0.1:7890
 [user]
 	email = 904016301@qq.com
 	name = AtaraxiaZ
 [core]
-	editor = vim
+	editor = nvim
 [alias]
 	graph = log --all --graph --decorate --oneline
+[difftool]
+    # disables the annoying prompt so whenever you hit 
+    # git difftool it will automatically launch the difftool
+    prompt = true
+[diff]
+    tool = vimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""

@@ -162,3 +162,7 @@ alias verdi="verdi -full64 &"
 # system proxy, use clash
 export http_proxy='127.0.0.1:7890'
 export https_proxy='127.0.0.1:7890'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion

@@ -11,3 +11,6 @@ done
 for file in $files; do
 	ln -s ~/dotfiles/$file ~/$file
 done
+
+i3config="i3config"
+ln -s ~/dotfiles/$i3config ~/.config/i3/config
