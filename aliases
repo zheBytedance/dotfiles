@@ -1,7 +1,8 @@
 # vim and neovim
+alias nvim="$HOME/opt/nvim.appimage"
 alias v="vim"
 alias nv="nvim"
-alias nvim="$HOME/opt/nvim.appimage"
+alias nvconf="nvim ~/.config/nvim/init.lua"
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -32,3 +33,4 @@ fi
 
 # others
 alias lg="lazygit"
+alias clash="clash 1 > /dev/null 2>&1 &"

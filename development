@@ -5,16 +5,17 @@ tmux send-keys -t development 'nvim' C-m
 # tmux split-window -v -p 10 -t development:2 
 # tmux select-layout -t development main-horizontal
 # tmux send-keys -t development:1.1 'cd /sandbox/noc_test_chip/src/' C-m
-tmux new-window -t development:2 -n "vivado" 
-tmux new-window -n "sim" -t development:3 
+tmux new-window -t development:2 -n "thesis" 
+tmux new-window -n "console" -t development:3 
 tmux new-window -n "note" -t development:4 
 tmux new-window -n "fpga" -t development:5 
 tmux new-window -n "ssh" -t development:6
 # tmux send-keys -t development:2 'vivado' C-m
-tmux send-keys -t development:3 'cd ~/Documents/' C-m
-tmux send-keys -t development:4 'cd ~/Nutstore Files/Typora/' C-m
-tmux send-keys -t development:4 'cd /fpga' C-m
-tmux send-keys -t development:6 'ssh -X zhe.li@shalabswl01' C-m
+tmux send-keys -t development:2 'cd ~/Documents/LaTex/master-thesis/' C-m
+tmux send-keys -t development:2 'nvim main.tex' C-m
+# tmux send-keys -t development:3 'cd ~/Documents/' C-m
+tmux send-keys -t development:4 'cd ~/"Nutstore Files"/Typora/' C-m
+tmux send-keys -t development:5 'cd /fpga' C-m
+# tmux send-keys -t development:6 'ssh -X zhe.li@shalabswl01' C-m
 tmux select-window -t development:1
 tmux attach -t development
-

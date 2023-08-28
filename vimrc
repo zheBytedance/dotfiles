@@ -1,9 +1,10 @@
 set nocompatible
 filetype plugin on
 filetype indent on
-filetype plugin indent on
+filetype plugin indent on   
 packadd! matchit
 let b:match_words = '\<begin\>:\<end\>,\<module\>:\<endmodule\>'
+set path+=~/Documents/projects/**
 set ignorecase
 " To make vim faster
 set nocursorline
