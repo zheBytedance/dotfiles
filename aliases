@@ -34,3 +34,7 @@ fi
 # others
 alias lg="lazygit"
 alias clash="clash 1 > /dev/null 2>&1 &"
+alias howdoi="howdoi -a -c"
+alias bat="batcat"
+alias trans="trans -brief -t zh -shell"
+alias menyoki="menyoki record"
